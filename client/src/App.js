@@ -263,7 +263,7 @@ return (
               <th>Correo</th>
               <th>Título</th>
               <th>Área</th>
-              <th>Exp.</th>
+              <th>Años Exp.</th>
               <th>Dedicacion</th>
               <th>Acciones</th>
             </tr>
