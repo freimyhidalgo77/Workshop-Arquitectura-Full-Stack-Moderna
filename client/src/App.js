@@ -261,6 +261,7 @@ return (
             <tr>
               <th>Nombre</th>
               <th>Correo</th>
+              <th>Teléfono</th>
               <th>Título</th>
               <th>Área</th>
               <th>Años Exp.</th>
@@ -273,6 +274,7 @@ return (
               <tr key={docente.id || index}>
                 <td>{docente.nombre}</td>
                 <td>{docente.correo}</td>
+                <td>{docente.telefono}</td>
                 <td>{docente.titulo}</td>
                 <td>{docente.area_academica}</td>
                 <td>{docente.anios_experiencia}</td>
