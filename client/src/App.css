@@ -1,38 +1,272 @@
-.App {
-  text-align: center;
+/* ============================================================
+   App.css - Estilo Profesional Tema Oscuro (Docentes)
+   ============================================================ */
+
+/* 1. Reset base y tipografía */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Una fuente limpia y profesional */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* 2. Estilo del cuerpo y contenedor principal */
+body {
+    background-color: #1a1e2e; /* Color de fondo oscuro del mockup */
+    color: #e6e6e6; /* Texto claro principal */
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo para que no se estire demasiado */
+    margin: 0 auto;
+    padding: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* 3. Títulos principales */
+h1 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Subtítulo (añadido para parecerse al mockup) */
+h1 + h2, /* Por si añades el subtítulo h2 justo después */
+.container > h1::after {
+    content: "Registro de profesores: datos académicos y de contacto";
+    display: block;
+    text-align: center;
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: #a0a0a0; /* Gris más claro */
+    margin-bottom: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 4. Estilo de la Sección del Formulario */
+.form-section {
+    margin-bottom: 40px;
+}
+
+/* Título de la sección del formulario */
+.form-section h2 {
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+/* Grid para los campos del formulario (igual que el mockup) */
+.form-section form {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas iguales */
+    gap: 15px 20px; /* Espaciado entre campos */
+}
+
+/* Ajustes específicos de columnas para la segunda fila (Dedicación, Exp, Registrar) */
+/* Dedicación y Años toman sus columnas normales. El botón tomará las 3 restantes */
+.form-section form > .form-group:nth-of-type(6), /* Dedicación */
+.form-section form > .form-group:nth-of-type(7) { /* Experiencia */
+    grid-column: span 1;
+}
+
+/* El grupo del botón ocupará las 3 columnas restantes de la segunda fila */
+.form-section form .button-group {
+    grid-column: span 3;
+    display: flex;
+    align-items: flex-end; /* Alinear el botón al fondo de la fila */
+}
+
+/* 5. Estilo de los Campos de Entrada (Form Groups, Labels, Inputs) */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: #e6e6e6;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    font-weight: 400;
+}
+
+.form-group input,
+.form-group select {
+    background-color: #23283a; /* Fondo más claro que el body */
+    border: 1px solid #2d344d; /* Borde sutil */
+    border-radius: 4px; /* Bordes redondeados sutiles */
+    color: #ffffff;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+/* Placeholders claros como el mockup */
+.form-group input::placeholder,
+.form-group select option:first-child {
+    color: #5c6275;
+}
+
+/* Efecto focus en inputs */
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #38a1f3; /* Azul brillante */
+}
+
+/* 6. Estilo del Botón Registrar/Actualizar */
+.button-group button[type="submit"] {
+    background-color: #38a1f3; /* Azul brillante del mockup */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 0;
+    width: 100%; /* Ocupa todo el espacio que le da el form grid */
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-group button[type="submit"]:hover {
+    background-color: #2087d3;
+}
+
+/* Botón Cancelar (por si se edita) */
+.button-group button[type="button"] {
+    background-color: #3b4256; /* Gris oscuro para cancelar */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* 7. Separador sutil */
+hr {
+    border: 0;
+    border-top: 1px solid #2d344d;
+    margin-bottom: 30px;
+}
+
+/* 8. Estilo de la Tabla (List Section) */
+.list-section {
+    background-color: #1a1e2e; /* Fondo igual que el body */
+}
+
+.list-section h2 {
+    display: none; /* Ocultar el título de la tabla como en el mockup */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Quitar espacios entre celdas */
+    font-size: 0.85rem;
+}
+
+/* Encabezado de la Tabla */
+thead th {
+    background-color: #23283a; /* Fondo para el header */
+    color: #ffffff;
+    text-align: left;
+    padding: 15px 10px;
+    font-weight: 600;
+    text-transform: capitalize; /* Capitalizar cabeceras */
+}
+
+/* Primera y última columna del header redondeadas */
+thead th:first-child {
+    border-top-left-radius: 4px;
+    padding-left: 20px;
+}
+thead th:last-child {
+    border-top-right-radius: 4px;
+    padding-right: 20px;
+}
+
+/* Cuerpo de la Tabla */
+tbody tr {
+    border-bottom: 1px solid #2d344d; /* Líneas divisorias sutiles */
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #1e2336; /* Efecto hover muy suave */
+}
+
+tbody tr:last-child {
+    border-bottom: none; /* Quitar línea en la última fila */
+}
+
+tbody td {
+    color: #d1d1d1; /* Texto de celda ligeramente más gris */
+    padding: 15px 10px;
+    vertical-align: middle;
+}
+
+tbody td:first-child {
+    padding-left: 20px;
+    color: #ffffff; /* Nombre en blanco */
+}
+
+tbody td:last-child {
+    padding-right: 20px;
+}
+
+/* 9. Estilo de los Botones de Acción de la Tabla (Editar, Eliminar) */
+tbody td button {
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 6px;
+    transition: background-color 0.2s ease;
+}
+
+/* Botón Editar */
+tbody td button:first-of-type {
+    background-color: #4caf50; /* Verde del mockup */
+    color: #ffffff;
+}
+tbody td button:first-of-type:hover {
+    background-color: #3d8c40;
+}
+
+/* Botón Eliminar */
+tbody td button:last-of-type {
+    background-color: #f44336; /* Rojo del mockup */
+    color: #ffffff;
+}
+tbody td button:last-of-type:hover {
+    background-color: #d32f2f;
+}
+
+/* 10. Responsividad básica */
+@media (max-width: 1000px) {
+    .form-section form {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+    }
+    .form-section form .button-group {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-section form {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+    }
+    .form-section form .button-group {
+        grid-column: span 1;
+    }
 }
