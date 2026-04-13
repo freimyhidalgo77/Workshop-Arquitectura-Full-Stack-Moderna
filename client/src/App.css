@@ -160,7 +160,12 @@ hr {
 
 /* 8. Estilo de la Tabla (List Section) */
 .list-section {
-    background-color: #1a1e2e; /* Fondo igual que el body */
+    background-color: #23283a; /* Un gris más claro que el fondo general */
+    border-radius: 8px; /* Esquinas redondeadas para toda la sección */
+    padding: 10px;
+    border: 1px solid #2d344d; /* Borde sutil para delimitar */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+    margin-top: 20px;
 }
 
 .list-section h2 {
@@ -169,18 +174,18 @@ hr {
 
 table {
     width: 100%;
-    border-collapse: collapse; /* Quitar espacios entre celdas */
+    border-collapse: separate; /* Cambiado para permitir bordes redondeados en el contenedor */
+    border-spacing: 0;
     font-size: 0.85rem;
 }
 
-/* Encabezado de la Tabla */
+/* Encabezado de la Tabla - Un poco más oscuro que el cuerpo de la tabla para contraste */
 thead th {
-    background-color: #23283a; /* Fondo para el header */
+    background-color: #1e2336; 
     color: #ffffff;
     text-align: left;
     padding: 15px 10px;
     font-weight: 600;
-    text-transform: capitalize; /* Capitalizar cabeceras */
 }
 
 /* Primera y última columna del header redondeadas */
@@ -208,14 +213,22 @@ tbody tr:last-child {
 }
 
 tbody td {
-    color: #d1d1d1; /* Texto de celda ligeramente más gris */
+    color: #d1d1d1;
     padding: 15px 10px;
-    vertical-align: middle;
+    border-bottom: 1px solid #2d344d; /* Línea divisoria */
+}
+
+tbody tr:hover {
+    background-color: #2a2f45; /* Resalte al hacer hover */
 }
 
 tbody td:first-child {
     padding-left: 20px;
     color: #ffffff; /* Nombre en blanco */
+}
+
+tbody tr:last-child td {
+    border-bottom: none; /* Quitar línea en la última fila */
 }
 
 tbody td:last-child {
