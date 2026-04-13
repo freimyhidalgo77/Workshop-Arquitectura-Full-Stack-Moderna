@@ -111,7 +111,7 @@ function App() {
   const data = await response.json();
   if(response.ok) {
     setRegistros([...registros, data]);
-    alert('Docentes guardado correctamente');
+    alert('Docente guardado correctamente');
   } else {
     alert(data.error || 'Error al guardar el docente')
 
@@ -264,6 +264,7 @@ return (
               <th>Título</th>
               <th>Área</th>
               <th>Exp.</th>
+              <th>Dedicacion</th>
               <th>Acciones</th>
             </tr>
           </thead>
@@ -275,6 +276,7 @@ return (
                 <td>{docente.titulo}</td>
                 <td>{docente.area_academica}</td>
                 <td>{docente.anios_experiencia}</td>
+                 <td>{docente.dedicacion}</td>
                 <td>
                   <button onClick={() => editarRegistro(index)}>Editar</button>
                   <button onClick={() => eliminarRegistro(index)}>Eliminar</button>
